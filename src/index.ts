@@ -12,6 +12,7 @@ export const attachErrorHandler = (app: Vue, options: VueOptions): void => {
     const componentName = formatComponentName(vm, false);
     const trace = vm ? generateComponentTrace(vm) : '';
     const metadata: Record<string, unknown> = {
+      message: `Error in ${lifecycleHook}: "${error && error.toString()}"`,
       componentName,
       lifecycleHook,
       trace,
@@ -44,8 +45,8 @@ export const attachErrorHandler = (app: Vue, options: VueOptions): void => {
       }
     }
 
-    if (options.errorCallback) {
-        options.errorCallback.call(metadata);
+    if (typeof options.errorCallback === 'function') {
+        options.errorCallback(metadata);
     }
   };
 };

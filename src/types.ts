@@ -46,12 +46,12 @@ export interface VueOptions extends TracingOptions {
     /**
      * Ignore handler
      */
-    ignoreHandler: boolean;
+    ignoreHandler?: boolean;
 
     /**
      * Callback to handle other actions
      */
-    errorCallback?: Function;
+    errorCallback?: any;
 
     /** {@link TracingOptions} */
     tracingOptions?: Partial<TracingOptions>;
