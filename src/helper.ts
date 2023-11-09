@@ -6,6 +6,20 @@ const classify = (str: string): string => str.replace(classifyRE, c => c.toUpper
 const ROOT_COMPONENT_NAME = '<Root>';
 const ANONYMOUS_COMPONENT_NAME = '<Anonymous>';
 
+export const replaceErrors = (key: string, value: any) => {
+    if (value instanceof Error) {
+        const error: Record<string, any> = {};
+
+        Object.getOwnPropertyNames(value).forEach(function (propName) {
+            error[propName] = value[propName];
+        });
+
+        return error;
+    }
+
+    return value;
+};
+
 const repeat = (str: string, n: number): string => {
     // string.repeat() is not supported by IE11, we fall back to just using the string in that case
     // eslint-disable-next-line @sentry-internal/sdk/no-unsupported-es6-methods

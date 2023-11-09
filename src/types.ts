@@ -51,7 +51,7 @@ export interface VueOptions extends TracingOptions {
     /**
      * Callback to handle other actions
      */
-    errorCallback?: any;
+    provider?: any;
 
     /** {@link TracingOptions} */
     tracingOptions?: Partial<TracingOptions>;
