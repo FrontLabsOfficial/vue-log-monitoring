@@ -1,7 +1,7 @@
 {
-  "name": "vue-log-monitoring",
-  "version": "0.0.7",
-  "main": "dist/vue-log-monitoring.js",
+  "name": "vue-log-monitoring-lite",
+  "version": "0.0.1",
+  "main": "dist/vue-log-monitoring-lite.js",
   "files": [
     "dist"
   ],

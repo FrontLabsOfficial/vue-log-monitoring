@@ -1,5 +1,5 @@
-import { VueOptions } from '@/types';
-import { attachErrorHandler } from '@/errorhandler';
+import { VueOptions } from './types';
+import { attachErrorHandler } from './errorhandler';
 
 const init = (options: VueOptions) => {
     if (!options.Vue && !options.app) {
